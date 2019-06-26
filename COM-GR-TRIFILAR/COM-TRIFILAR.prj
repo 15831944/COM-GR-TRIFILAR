@@ -1,20 +1,20 @@
 ;;; VLisp project file [V2.0] COM-TRIFILAR saved to:[Z:/Langamer Engenharia/06-TI/AutoLISP/LISP/COM-GR-TRIFILAR/COM-GR-TRIFILAR] at:[6/26/19] 
 (VLISP-PROJECT-LIST
-  :NAME
+  :name
   COM-TRIFILAR
-  :OWN-LIST
-  ("FUNC-GET-ATT-POINTS"
-    "FUNC-HIGHLIGHT-ATTS"	  "TRIFILAR"
-    "FUNC-INSERE-CIRCUITOS"	  "FUNC-CHANGE-LAYER-LIST-OBJ"
+  :own-list
+  ("FUNC-INSERE-CIRCUITOS"
+    "FUNC-GET-ATT-POINTS"	 "FUNC-HIGHLIGHT-ATTS"
+    "TRIFILAR"			 "FUNC-CHANGE-LAYER-LIST-OBJ"
     "FindNearNum"
    )
-  :FAS-DIRECTORY
+  :fas-directory
   "Z:/Lisp"
-  :TMP-DIRECTORY
+  :tmp-directory
   "Z:\\Langamer Engenharia\\06-TI\\AutoLISP\\LISP\\COM-GR-TRIFILAR\\COM-GR-TRIFILAR"
-  :PROJECT-KEYS
+  :project-keys
   (:BUILD (:standard) :MERGED T :SAFE-MODE T :MSGLEVEL 1)
-  :CONTEXT-ID
+  :context-id
   :AUTOLISP
 )
 ;;; EOF

@@ -147,17 +147,12 @@
 				(LM:vl-SetAttributeValue objCirc "CIRC..." (strcat "CIRC. " (cdr faseAtual)))
 				(LM:vl-SetAttributeValue objCirc "XXA"
 					(strcat
-<<<<<<< HEAD
-						(itoa (atoi (nth (vl-position "DISJ (A)" (car dadosTab)) (nth (atoi (cdr faseAtual)) dadosTab))))
-						"A"))
-=======
 						(itoa (atoi (nth (vl-position "DISJ (A)" (car dadosTab)) (nth (1+ (atoi (cdr faseAtual))) dadosTab))))
 						"A")
 					)
 				
 
 				
->>>>>>> parent of 9873540... Fix identation
 				)
 			)
 
@@ -305,9 +300,13 @@
 		(progn
 			(LM:vl-SetAttributeValue objCirc "DDRX" (strcat "D" (itoa nDisjuntor)))
 			(LM:vl-SetAttributeValue objCirc "30MA" "30MA")
-			(LM:vl-SetAttributeValue objCirc "XXXA" (strcat
-					(itoa (atoi (nth (vl-position "DISJ (A)" (car dadosTab)) (nth (atoi (cdr faseAtual)) dadosTab))))
-					"A"))
+			(LM:vl-SetAttributeValue
+				objCirc
+				"XXXA"
+				(strcat
+					(itoa (atoi (nth (vl-position "DISJ (A)" (car dadosTab)) (nth (1+ (atoi (cdr faseAtual))) dadosTab))))
+					"A")
+				)
 			)
 		)
 
