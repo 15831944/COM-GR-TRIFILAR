@@ -1,10 +1,5 @@
 (defun InsereCircuitos()
 
-	;; Pega os números da tabela que estão em cor amarela. 
-	(setq numsDDR (LM:SS->LIST (ssget "_C" ptUser1 ptUser2 '((1 . "[0-9]*") (-4 . "<OR") (62 . 2) (62 . 50) (-4 . "OR>")))))
-	;; Substitui as ENAMES pelo texto dos objetos (o número). 
-	(setq numsDDR (mapcar '(lambda (en) (cdr (assoc 1 (entget en)))) numsDDR))
-
 	;Lista que será usada no momento de decidir qual o próximo circuito. 
 	(setq listaRequisicao (list (list "S" "S+T" "R+S+T") (list "T" "R+T" "R+S+T") (list "R" "R+S" "R+S+T")))
 

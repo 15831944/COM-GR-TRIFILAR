@@ -51,8 +51,6 @@
 					)
 		)
 
-	
-
 	;A última linha da tabela não é necessária, pois é o TOTAL
 	(setq fasesList (vl-remove (last fasesList) fasesList))
 
@@ -150,16 +148,12 @@
 						(itoa (atoi (nth (vl-position "DISJ (A)" (car dadosTab)) (nth (1+ (atoi (cdr faseAtual))) dadosTab))))
 						"A")
 					)
-				
-
-				
 				)
 			)
 
 		(LM:vl-SetAttributeValue objCirc "DX" (strcat "D" (itoa (setq nDisjuntor (1+ nDisjuntor)))))
 		
 		(cond
-
 			;Se a fase do circuito tem apenas 1 caractere (1 fase), 
 			;ou não foi definido faseAtual (circuito Reserva).      
 		((or (not faseAtual) (= (strlen (car faseAtual)) 1))
@@ -187,7 +181,6 @@
 					 )
 				 )
 
-
 			 (cond
 				 ((or (= faseAnt "T") (= (car faseAtual) "R"))
 					(LM:SetDynPropValue objCirc "Distance1" (distance pt (list (car pt)
@@ -195,7 +188,6 @@
 																																		 (cadr (if (> (atof cargaR) 0)
 																																						 (progn (setq faseAnt "R") pt_R)
 																																						 (progn (setq faseAnt "S") pt_S))))));Fase R 
-					
 					)
 
 				 ((or (= faseAnt "R") (= (car faseAtual) "S"))
@@ -215,7 +207,6 @@
 					)
 				 )
 			 )	
-
 			
 			;Se a fase do circuito tem apenas 3 caracteres (2 fases)
 			((= (strlen (car faseAtual)) 3)
@@ -268,7 +259,6 @@
 					)
 				 )
 			
-			 
 			 (cond
 				 ((= faseAnt "R")
 					(LM:SetDynPropValue objCirc "Distance1" (distance pt (list (car pt) (cadr pt_S)))) ;Fase S
@@ -371,11 +361,9 @@
 	;Lista de valores padrões da correnteDG, que será usada no próximo passo 
 	(setq padroesDG (list 40 50 63 80 100 125 150 175 200 225 250 300 400 500 630 800 1200 1600))
 	
-
 	;Função que encontra o número maior-igual ao correnteDG na lista padroesDG    
 	(setq correnteDG (FindNum > correnteDG padroesDG));; substituído para "maior"
 	
-
 	;Inserir o circuito do disjuntor geral
 	(setq auxList (LM:GetDynProps obj_Trifilar));Lista de propriedades dinâmicas do bloco diagrama trifilar
 
@@ -386,10 +374,6 @@
 					 (+ (cadr pt_Trifilar) (cdr (assoc "DG Y" auxList)))
 					 )
 					 )
-
-
-
-	
 
 	(command
 			"._INSERT"
@@ -468,7 +452,6 @@
 	(LM:vl-SetAttributeValue obj_Trifilar "2#XX+N(XX)_-_XXXXV_-_T(#XX)" (strcat "2#(" p2 ")+N(" p2 ")-750V-T(#" p2T ")"))
 	(LM:vl-SetAttributeValue obj_Trifilar "3#XX+N(XX)_-_XXXXV_-_T(#XX)" (strcat "3#(" p2 ")+N(" p2 ")-750V-T(#" p2T ")"))
 	(LM:vl-SetAttributeValue obj_Trifilar "VEM_DO_XXX-X" "VEM DO QFLT-G")
-	
 	)
 			
 
