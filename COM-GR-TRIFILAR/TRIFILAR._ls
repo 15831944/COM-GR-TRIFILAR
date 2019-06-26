@@ -277,8 +277,8 @@
 	(LM:vl-SetAttributeValue ObjBlk_QuadCargas "TTTT" cargaT)
 	(LM:vl-SetAttributeValue ObjBlk_QuadCargas "VAVA" cargaVA)
 	(LM:vl-SetAttributeValue ObjBlk_QuadCargas "WWWW" cargaW)
-	(LM:vl-SetAttributeValue ObjBlk_QuadCargas "XX-MÓDULOS" "XXXXXXXXXX")
-	(LM:vl-SetAttributeValue ObjBlk_QuadCargas "XXXX-SCHNEIDER" "XXXXXXXXXX")
+	(LM:vl-SetAttributeValue ObjBlk_QuadCargas "XX-MÓDULOS" "PREENCHA AQUI")
+	(LM:vl-SetAttributeValue ObjBlk_QuadCargas "XXXX-SCHNEIDER" "PREENCHA AQUI")
 
 	
 

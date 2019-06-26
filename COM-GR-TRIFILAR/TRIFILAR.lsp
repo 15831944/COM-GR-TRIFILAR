@@ -175,19 +175,12 @@
 						(setq Y2Cargas (cadr p2))
 						)
 					)
-
-
-				
-				 
 				(entdel obj)
 				(setq desenhoTodo2 (vl-remove obj desenhoTodo2))
 				)
 			(setq i (1+ i))
 			)
-		
 		)
-
-	
 
 	;Reinserção do bloco "QUADRO DE CARGAS"
 	(command "INSERT" "BLOCO-QUADRO-DE-CARGAS" pt2_LVer1 "" "" "")
@@ -222,8 +215,6 @@
 		(setq fatorPA (substr fatorPA 2))
 		)
 
-	
-	
 	;Pegar o valor "Queda de tensão...",         
 	;que é o maior valor da coluna "DV PARC (%)".
 	(setq queda (append))
@@ -253,7 +244,6 @@
 	(setq maiorQueda (vl-list->string maiorQueda))
 	(setq maiorQueda (substr maiorQueda 1 4))
 
-
 	;Pegar os totais das cargas parciais de cada fase
 	(setq cargaR (nth (vl-position "POT. - R (W)" (car dadosTab)) (last dadosTab)))
 	(setq cargaS (nth (vl-position "POT. - S (W)" (car dadosTab)) (last dadosTab)))
@@ -279,8 +269,6 @@
 	(LM:vl-SetAttributeValue ObjBlk_QuadCargas "WWWW" cargaW)
 	(LM:vl-SetAttributeValue ObjBlk_QuadCargas "XX-MÓDULOS" "PREENCHA AQUI")
 	(LM:vl-SetAttributeValue ObjBlk_QuadCargas "XXXX-SCHNEIDER" "PREENCHA AQUI")
-
-	
 
 	;***********************************************************************************************************************************************************************************************
 	;Considerar colocar as notas gerais como parte do bloco,
@@ -330,17 +318,10 @@
 	;; Highlights the attributes from circ block (Quadro de cargas) 
 	;; e blk_Trifilar block (Trifilar)                              
 	(HighlightAttributes blk_QuadCargas blk_Trifilar circ)
-				
-
-	
-
-	
-	
 	
 	(command "_.ZOOM" "O" blk_QuadCargas blk_Trifilar "")
 	(vla-endUndoMark doc)
 
-	
 	(RestauraVariaveis)
 	)
 
